@@ -1,0 +1,66 @@
+/* ========== Theme ========== */
+:root{
+  --bg:#AAD8F2;
+  --text:#557D8A;
+  --muted:#B1B2CC;
+  --gold:#f0c24b;
+  --gold-2:#e3b33a;
+  --card:#ffffff;
+  --accent:#f0c24b;
+  --max:1200px;
+  --radius:14px;
+  --shadow:3 12px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+img{max-width:100%;display:block}
+a{color:var(--text);text-decoration:none}
+.container{max-width:var(--max);margin:0 auto;padding:0 18px}
+.btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--gold);color:#1a1a1a;padding:.75rem 1.1rem;border-radius:999px;font-weight:700;box-shadow:var(--shadow)}
+.btn.outline{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+.btn:hover{filter:brightness(1.1)}
+/* ========== Header ========== */
+.topbar{position:sticky;top:0;z-index:60;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);border-bottom:1px solid #1f1f1f}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:.7rem 0}
+.brand{display:flex;align-items:center;gap:.75rem}
+.brand__logo{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(95% 95% at 30% 30%, #ffe7a3 0%, var(--gold-2) 55%, #c99a19 100%);color:#111;font-weight:900;box-shadow:var(--shadow)}
+.brand__title{font-weight:800;letter-spacing:.3px}
+.menu{display:flex;gap:1rem;flex-wrap:wrap}
+.menu a{padding:.5rem .8rem;border-radius:10px;color:#eaeaea}
+.menu a.active,.menu a:hover{background:#161616;color:#fff}
+/* ========== Hero ========== */
+.hero{position:relative;isolation:isolate;min-height:62vh;display:grid;place-items:center;background:#000;overflow:hidden}
+.hero::before{content:\"\";position:absolute;inset:0;background:url('./assets/hero-marrakech.png') center/cover no-repeat;opacity:.6;filter:saturate(.9) contrast(1.05)}
+.hero__content{position:relative;z-index:1;text-align:left;width:100%}
+.hero h1{font-size:clamp(32px,5vw,56px);margin:0 0 8px}
+.hero p{max-width:760px;margin:0 0 18px;color:#efefef}
+.hero .kicker{color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:.2em;font-size:13px;margin-bottom:10px}
+/* ========== Sections ========== */
+.section{padding:56px 0;background:var(--bg)}
+.section.light{background:#0f0f0f}
+.section h2{font-size:clamp(26px,3.6vw,34px);margin:0 0 8px;text-align:center}
+.section .sub{color:var(--muted);text-align:center;margin:0 auto 28px;max-width:850px}
+.grid{display:grid;gap:18px}
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.grid.cols-2{grid-template-columns:repeat(2,1fr)}
+@media (max-width: 960px){.grid.cols-3{grid-template-columns:1fr}.grid.cols-2{grid-template-columns:1fr}}
+.card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);border:1px solid #1e1e1e}
+.card h3{margin:4px 0 6px}
+.icon{font-size:28px}
+/* ========== Footer ========== */
+.footer{background:#0a0a0a;border-top:1px solid #1b1b1b;padding:36px 0 18px;color:#ddd}
+.footer .cols{display:grid;gap:18px;grid-template-columns:2fr 1fr 1fr}
+.footer a{color:#ddd}
+.footer .cta{margin-top:12px}
+.copy{border-top:1px solid #1b1b1b;margin-top:22px;padding-top:12px;color:#aaa;font-size:14px}
+@media (max-width: 900px){.footer .cols{grid-template-columns:1fr}}
+/* ========== Utilities ========== */
+.muted{color:var(--muted)}
+.center{text-align:center}
+.sep{height:1px;background:#1b1b1b;margin:18px 0}
+.lead{font-size:1.1rem;color:#eaeaea}
+/* Table for competencies details */
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:10px 12px;border-bottom:1px solid #1b1b1b;text-align:left;vertical-align:top}
+.badge{display:inline-block;padding:.2rem .5rem;border:1px solid var(--gold);color:var(--gold);border-radius:999px;font-size:12px}
